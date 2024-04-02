@@ -1,12 +1,12 @@
 import GlobalStyles from "./GlobalStyles";
-import Home from "./pages/Home";
+import Header from "./sections/Header";
+import Home from "./sections/Home";
 
 function App() {
-  
-
   return (
     <>
       <GlobalStyles />
+      <Header />
       <Home />
     </>
   );

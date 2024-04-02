@@ -4,15 +4,30 @@ const ContainerRadio = styled.div`
     padding: 1.3rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 `
 const TitleQuestion = styled.h2`
     margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    max-width: 60ch;
 `
 const Question = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
 `
+const LabelQuestion = styled.label`
+    background-color: #e0e0e0;
+    padding: .6rem 1rem;
+    border-radius: 15px;
+    width: 700px;
+`
+const InputQuestion = styled.input`
+    margin-right: 1rem;
+`
+
 
 interface RadioProps {
     pergunta: string;
@@ -30,10 +45,10 @@ interface RadioProps {
             <TitleQuestion>{pergunta}</TitleQuestion>
             <Question>
                 {options.map((option) => (
-                    <label
+                    <LabelQuestion
                         key={option}
                     >
-                    <input
+                    <InputQuestion
                         type="radio"
                         id={id}
                         checked={value === option}
@@ -41,7 +56,7 @@ interface RadioProps {
                         onChange={onChange}
                     />
                     {option}
-                </label>
+                </LabelQuestion>
                 ))}
             </Question>
       </ContainerRadio>
