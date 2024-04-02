@@ -23,6 +23,9 @@ const LabelQuestion = styled.label`
     padding: .6rem 1rem;
     border-radius: 15px;
     width: 700px;
+    @media (max-width: 700px) {
+        width: 80vw;  
+    }
 `
 const InputQuestion = styled.input`
     margin-right: 1rem;

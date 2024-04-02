@@ -42,7 +42,7 @@ const ErroResposta = styled.p`
  font-weight: bold;
 `;
 const QuestionCounter = styled.p`
-  font-size: .5rem;
+  font-size: .7vw;
 `
 
 const perguntas = [
