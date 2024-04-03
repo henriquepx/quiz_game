@@ -31,7 +31,6 @@ const InputQuestion = styled.input`
     margin-right: 1rem;
 `
 
-
 interface RadioProps {
     pergunta: string;
     options: string[];

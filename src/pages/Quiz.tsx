@@ -1,6 +1,8 @@
 import React from 'react';
 import Radio from '../components/Radio';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const FormQuestion = styled.form`
     display: flex;
@@ -8,7 +10,8 @@ const FormQuestion = styled.form`
     justify-content: center;
     align-items: center;
 
-    height: 80vh;
+    height: 100%;
+    padding-bottom: 10rem;
 `;
 const Button = styled.button`
     padding: .5rem 1rem;
@@ -42,8 +45,32 @@ const ErroResposta = styled.p`
  font-weight: bold;
 `;
 const QuestionCounter = styled.p`
-  font-size: .7vw;
+  font-size: .8rem;
 `
+const DivHeaderQuiz = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 10rem;
+  @media (max-width: 700px) {
+      padding: 1.2rem;
+      margin-bottom: 5rem; 
+  }
+  h1 {
+    font-weight: bold;
+  }
+`
+const ReturnToHome = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+`
+
+
+
 
 const perguntas = [
  {
@@ -174,7 +201,7 @@ interface RespostasState {
   p10: string;
 }
 
-function Home() {
+function Quiz() {
  const [respostas, setRespostas] = React.useState<RespostasState>({
     p1: '',
     p2: '',
@@ -240,6 +267,14 @@ function Home() {
 
  return (
    <FormQuestion onSubmit={(event) => event.preventDefault()}>
+     <DivHeaderQuiz>
+       <ReturnToHome to="/">
+         <FaArrowLeftLong />
+         Return to home
+       </ReturnToHome>
+       <h1>Henrique</h1>
+    </DivHeaderQuiz>
+
      <QuestionCounter>Pergunta {Math.min(slide + 1, perguntas.length)}/{perguntas.length}</QuestionCounter>
       {perguntas.map((pergunta, index) => (
         <Radio
@@ -273,4 +308,4 @@ function Home() {
  );
 }
 
-export default Home;
+export default Quiz;

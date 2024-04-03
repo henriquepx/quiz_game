@@ -1,14 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyles from "./GlobalStyles";
-import Header from "./sections/Header";
-import Home from "./sections/Home";
+import Home from "./pages/Home";
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyles />
-      <Header />
-      <Home />
-    </>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/reactquiz' element={<Quiz />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
