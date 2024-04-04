@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 
 const QuestionCardContainer = styled.div`
     padding: .9rem;
-    background-color: #eeeeee;
+    background-color: #f1f1f1;
     border-radius: 10px;
 
     max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    
 `
 const TitleCard = styled.h1`
     margin-top: .5rem;
@@ -20,18 +22,17 @@ const TextCard = styled.p`
     font-weight: 300;
     font-size: 1rem;
 `
-const ButtonToQuiz = styled.a`
+const ButtonToQuiz = styled(Link)`
     background-color: #00b7ff;
     text-align: center;
-    padding: .5rem;
+    padding: .6rem;
     margin-top: .5rem;
-    a {
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
 `
 
 const BackgroundImageContainer = styled.div<{ imgUrl: string }>`
@@ -58,11 +59,9 @@ interface CardQuestionProps {
                 <TitleCard>{title}</TitleCard>
                 <TextCard>{text}</TextCard>
           </div>
-          <ButtonToQuiz>
-              <Link to={linkTo}>
+          <ButtonToQuiz to={linkTo}>
                   Play
                   <FaPlay />
-              </Link>
           </ButtonToQuiz>
     </QuestionCardContainer>
   )

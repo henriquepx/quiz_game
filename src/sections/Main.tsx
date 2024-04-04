@@ -18,6 +18,20 @@ const MainContainer = styled.div`
         margin-bottom: .3rem;
     }
 `
+const ButtonsTheme = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 3rem;
+    button {
+        background-color: transparent;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: .9rem;
+    }
+`
 const QuizzesWrap = styled.div`
     margin-top: 2rem;
     display: flex;
@@ -28,9 +42,11 @@ const QuizzesWrap = styled.div`
 const Main = () => {
     return (
         <MainContainer>
-            <h1>Quizzes de Programação</h1>
-            <p>Aqui você encontrará quizzes para praticar os conceitos sobre programação.</p>
-            <p>Escolha um tema abaixo e clique em "Play" para prosseguir.</p>
+            <ButtonsTheme>
+                <button>Front-end</button>
+                <button>Todos</button>
+                <button>Back-end</button>
+            </ButtonsTheme>
             <QuizzesWrap>
                 <CardQuestion
                     imgUrl={ReactWallpaperCard}

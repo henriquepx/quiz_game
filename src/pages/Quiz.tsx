@@ -1,8 +1,17 @@
 import React from 'react';
 import Radio from '../components/Radio';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const FormQuestion = styled.form`
     display: flex;
@@ -11,7 +20,9 @@ const FormQuestion = styled.form`
     align-items: center;
 
     height: 100%;
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
+    animation: ${fadeIn} 1.4s forwards;
+    
 `;
 const Button = styled.button`
     padding: .5rem 1rem;
@@ -59,7 +70,8 @@ const DivHeaderQuiz = styled.div`
       margin-bottom: 5rem; 
   }
   h1 {
-    font-weight: bold;
+    font-family: "Bangers", system-ui;
+    font-size: 1.4rem;
   }
 `
 const ReturnToHome = styled(Link)`
@@ -67,6 +79,7 @@ const ReturnToHome = styled(Link)`
   align-items: center;
   gap: 10px;
   color: #000;
+  font-weight: 700;
 `
 
 
@@ -272,7 +285,7 @@ function Quiz() {
          <FaArrowLeftLong />
          Return to home
        </ReturnToHome>
-       <h1>Henrique</h1>
+       <h1>QuizGames</h1>
     </DivHeaderQuiz>
 
      <QuestionCounter>Pergunta {Math.min(slide + 1, perguntas.length)}/{perguntas.length}</QuestionCounter>

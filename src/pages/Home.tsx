@@ -1,17 +1,14 @@
-import styled from 'styled-components';
 import Header from '../sections/Header';
 import Main from '../sections/Main';
-
-const HomeContainer = styled.div`
-
-`
+import Footer from '../sections/Footer';
 
 const Home = () => {
     return (
-        <HomeContainer>
+        <div>
             <Header />
             <Main />
-        </HomeContainer>
+            <Footer />
+        </div>
     )
 }
 
