@@ -36,6 +36,7 @@ const ButtonsTheme = styled.div`
 const QuizzesWrap = styled.div`
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
 `
 

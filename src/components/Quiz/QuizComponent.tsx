@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuiz } from './QuizLogic';
-import { FormQuestion, Button, Answer, ErroContainer, ErroTitulo, ErroPergunta, ErroResposta, QuestionCounter, DivHeaderQuiz, ReturnToHome } from './QuizStyles';
+import { FormQuestion, Button, Answer, ErroContainer, ErroTitulo, ErroPergunta, ErroResposta, QuestionCounter, DivHeaderQuiz, DivHeaderContainer, HeaderAnswerContainer,HeaderAnswerBlock, ReturnToHome } from './QuizStyles';
 import Radio from '../Radio';
 import { FaArrowLeftLong } from "react-icons/fa6";
 
@@ -28,13 +28,25 @@ const QuizComponent: React.FC<QuizProps> = ({ perguntas }) => {
 
  return (
     <FormQuestion onSubmit={(event) => event.preventDefault()}>
-      <DivHeaderQuiz>
-        <ReturnToHome to="/">
-          <FaArrowLeftLong />
-          Return to home
-        </ReturnToHome>
-        <h1>QuizGames</h1>
-      </DivHeaderQuiz>
+     <DivHeaderContainer>
+       <HeaderAnswerContainer>
+       {perguntas.map((pergunta, index) => (
+        <HeaderAnswerBlock 
+            key={pergunta.id} 
+            active={slide === index} 
+            answered={index <= slide}
+        />
+    ))}
+       </HeaderAnswerContainer>
+        <DivHeaderQuiz>
+          <ReturnToHome to="/">
+            <FaArrowLeftLong />
+            Return to home
+          </ReturnToHome>
+          <h1>QuizGames</h1>
+        </DivHeaderQuiz>
+     </DivHeaderContainer> 
+     
 
       <QuestionCounter>Pergunta {Math.min(slide + 1, perguntas.length)}/{perguntas.length}</QuestionCounter>
       {perguntas.map((pergunta, index) => (

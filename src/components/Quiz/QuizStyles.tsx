@@ -22,7 +22,7 @@ export const FormQuestion = styled.form`
 
 export const Button = styled.button`
     padding: .5rem 1rem;
-    background-color: #00ccff;
+    background-color: #0098df;
     color: #efefef;
     cursor: pointer;
 `;
@@ -60,13 +60,39 @@ export const QuestionCounter = styled.p`
  font-size: .8rem;
 `;
 
+export const DivHeaderContainer = styled.div`
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ padding: 2rem;
+`;
+
+export const HeaderAnswerContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 15px;
+`
+interface HeaderAnswerBlockProps {
+  active: boolean;
+  answered: boolean;
+}
+
+export const HeaderAnswerBlock = styled.span<HeaderAnswerBlockProps>`
+    display: block;
+    width: 100%;
+    background-color: ${props => props.active || props.answered ? '#0098df' : '#ccc'};
+    height: 10px;
+    border-radius: 10px;
+`;
+
 export const DivHeaderQuiz = styled.div`
  width: 100%;
  display: flex;
  justify-content: space-between;
  align-items: center;
- padding: 2rem;
- margin-bottom: 10rem;
+ padding: 1rem 0;
+ margin-bottom: 7rem;
  @media (max-width: 700px) {
       padding: 1.2rem;
       margin-bottom: 5rem; 
