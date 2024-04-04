@@ -11,8 +11,8 @@ const MainContainer = styled.div`
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    padding: .5rem 1rem; 
-    height: 100vh;
+    padding: .5rem 1rem 13.8rem 1rem; 
+    height: 100%;
     h1 {
         font-size: 1.3rem;
         color: #313131;
