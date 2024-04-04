@@ -4,11 +4,7 @@ import { TfiAngleDown } from "react-icons/tfi";
 const FooterContainer = styled.footer`
     padding: .7rem 1rem;
     border-top: 1px solid #e4e4e4;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     margin-top: 3rem;
-    
 `
 const FooterSize = styled.footer`
     max-width: 1200px;

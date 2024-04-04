@@ -12,6 +12,7 @@ const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: .5rem 1rem; 
+    height: 100vh;
     h1 {
         font-size: 1.3rem;
         color: #313131;
