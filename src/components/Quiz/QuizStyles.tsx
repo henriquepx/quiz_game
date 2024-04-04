@@ -95,7 +95,7 @@ export const DivHeaderQuiz = styled.div`
  margin-bottom: 7rem;
  @media (max-width: 700px) {
       padding: 1.2rem;
-      margin-bottom: 5rem; 
+      margin-bottom: 0rem; 
  }
  h1 {
     font-family: "Bangers", system-ui;
