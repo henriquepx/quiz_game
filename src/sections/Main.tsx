@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import CardQuestion from '../components/CardQuestion';
 
 import ReactWallpaperCard from '../assets/cardthemes/react.png'
-// import Amor from '../assets/cardthemes/amor.jpg'
+ import Typescript from '../assets/cardthemes/typescript.png'
 
 const MainContainer = styled.div`
     max-width: 1200px;
@@ -52,15 +52,15 @@ const Main = () => {
                 <CardQuestion
                     imgUrl={ReactWallpaperCard}
                     title='React Quiz'
-                    text='Esse é um questionário sobre o framework ReactJS, teste seu conhecimento jogando clicando no botão abaixo:'
+                    text='Esse é um questionário sobre o framework ReactJS. Teste seu conhecimento jogando clicando no botão abaixo:'
                     linkTo='/reactquiz'
                 />
-                {/* <CardQuestion
-                    imgUrl={Amor}
-                    title='Nosso amor'
-                    text='Esse é um questionário sobre o nosso relacionamento, teste seu conhecimento jogando clicando no botão abaixo:'
-                    linkTo='/reactquiz'
-                /> */}
+                 <CardQuestion
+                    imgUrl={Typescript}
+                    title='TypeScript Quiz'
+                    text='Esse é um questionário sobre TypeScript, o superset do JavaScript. Teste seu conhecimento jogando clicando no botão abaixo:'
+                    linkTo='/typescriptquiz'
+                />
             </QuizzesWrap>
         </MainContainer>
     )

@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyles from "./GlobalStyles";
 import Home from "./pages/Home";
-import Quiz from './pages/Quiz';
+import QuizReact from './pages/Quizzes/QuizReact';
+import QuizTypescript from './pages/Quizzes/QuizTypescript';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/reactquiz' element={<Quiz />}/>
+        <Route path='/reactquiz' element={<QuizReact />} />
+        <Route path='/typescriptquiz' element={<QuizTypescript />}/>
       </Routes>
     </BrowserRouter>
   );
