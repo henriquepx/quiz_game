@@ -5,9 +5,9 @@ const perguntas = [
  {
     pergunta: 'Qual é a diferença entre state e props em React?',
     options: [
-      'state é imutável, enquanto props é mutável',
-      'props é passado para o componente filho, enquanto state é gerenciado pelo componente',
-      'state é passado para o componente filho, enquanto props é gerenciado pelo componente',
+      'State é mutável, enquanto props é imutável',
+      'Props é passado para o componente filho, enquanto state é gerenciado pelo componente',
+      'State é passado para o componente filho, enquanto props é gerenciado pelo componente',
       'Nenhuma das opções acima'
     ],
     resposta: 'Props é passado para o componente filho, enquanto state é gerenciado pelo componente',
@@ -69,23 +69,23 @@ const perguntas = [
     id: 'p6',
   },
   {
-    pergunta: 'Quando o Henrique tá certo sobre um assunto que ele domina e a Agatha não tem a menor ideia do que se trata o assunto, quem tá certo?',
+    pergunta: 'Qual o propósito do hook useEffect() em ReactJS?',
     options: [
-        'Agatha',
-        'Henrique',
-        'Nenhum dos dois',
+      'Para realizar efeitos colaterais em componentes funcionais.',
+      'Para manipular o estado em componentes de classe.',
+      'Para criar componentes personalizados em React.',
+      'Para acessar o contexto de um componente funcional.'
     ],
-    resposta: 'Agatha',
+    resposta: 'Para realizar efeitos colaterais em componentes funcionais.',
     id: 'p7',
   },
   {
     pergunta: 'Como você pode passar uma função de um componente pai para um componente filho em ReactJS?',
     options: [
         'Usando o método this.function no componente pai',
-        'sando a função bind() no componente filho.',
+        'Usando a função bind() no componente filho.',
       'Apenas atribuindo a função a uma propriedade do componente filho.',
-      'Usando a função this.props.function no componente filho.',
-        'Usando a função setState() no componente pai.'
+      'Usando a função this.props.function no componente filho.'
     ],
     resposta: 'Apenas atribuindo a função a uma propriedade do componente filho.',
     id: 'p8',
@@ -96,8 +96,7 @@ const perguntas = [
         'Para definir estados complexos em componentes funcionais.',
         'Para realizar operações matemáticas em componentes de classe.',
       'Para criar efeitos de animação em componentes de classe.',
-      'Para manipular a lógica de redirecionamento em componentes funcionais.',
-        'Para acessar o histórico de navegação do navegador em componentes de classe.'
+      'Para manipular a lógica de redirecionamento em componentes funcionais.'
     ],
     resposta: 'Para definir estados complexos em componentes funcionais.',
     id: 'p9',
@@ -108,8 +107,7 @@ const perguntas = [
         'Para acessar o contexto de um componente funcional.',
         'Para criar um novo contexto em um componente de classe.',
       'Para definir estilos CSS em componentes de função.',
-      'Para acessar os props de um componente pai em um componente filho.',
-        'Para definir métodos de validação de formulário em componentes de classe.'
+      'Para acessar os props de um componente pai em um componente filho.'
     ],
     resposta: 'Para acessar o contexto de um componente funcional.',
     id: 'p10',

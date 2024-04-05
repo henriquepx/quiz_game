@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuiz } from './QuizLogic';
-import { FormQuestion, Button, Answer, ErroContainer, ErroTitulo, ErroPergunta, ErroResposta, QuestionCounter, DivHeaderQuiz, DivHeaderContainer, HeaderAnswerContainer,HeaderAnswerBlock, ReturnToHome } from './QuizStyles';
+import { FormQuestion, Button, QuestionCounter, ModalContainer, HeaderModal, ModalContent, CloseButton, DivHeaderQuiz, DivHeaderContainer, HeaderAnswerContainer,HeaderAnswerBlock, ReturnToHome } from './QuizStyles';
 import Radio from '../Radio';
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 interface Pergunta {
  pergunta: string;
@@ -19,12 +19,24 @@ const QuizComponent: React.FC<QuizProps> = ({ perguntas }) => {
  const {
     respostas,
     slide,
-    resultado,
-    perguntasErradas,
     handleChange,
-    reiniciarQuiz,
     handleClick,
- } = useQuiz(perguntas);
+  } = useQuiz(perguntas);
+  
+ const [isLastQuestion, setIsLastQuestion] = useState(false);
+ const [isModalOpen, setIsModalOpen] = useState(false);
+
+ const openModal = () => {
+   setIsModalOpen(true);
+ };
+
+ const closeModal = () => {
+   setIsModalOpen(false);
+ };
+
+ React.useEffect(() => {
+   setIsLastQuestion(slide === perguntas.length - 1);
+ }, [slide, perguntas.length]);
 
  return (
     <FormQuestion onSubmit={(event) => event.preventDefault()}>
@@ -58,24 +70,21 @@ const QuizComponent: React.FC<QuizProps> = ({ perguntas }) => {
           {...pergunta}
         />
       ))}
-      {resultado ? (
-        <Answer>
-          <p>{resultado}</p>
-          {perguntasErradas.length > 0 && (
-            <ErroContainer>
-              <ErroTitulo>Perguntas erradas:</ErroTitulo>
-              {perguntasErradas.map((perguntaErradas, index) => (
-                <div key={index}>
-                 <ErroPergunta>{perguntaErradas.pergunta}</ErroPergunta>
-                 <ErroResposta>Resposta correta: {perguntaErradas.respostaCorreta}</ErroResposta>
-                </div>
-              ))}
-            </ErroContainer>
-          )}
-          <Button onClick={reiniciarQuiz}>Reiniciar</Button>
-        </Answer>
+      {isLastQuestion ? (
+        <Button onClick={openModal}>Exibir resultado</Button>
       ) : (
-        <Button onClick={handleClick}>Próxima</Button>
+        <Button onClick={handleClick}>Próxima pergunta <FaArrowRightLong /></Button>
+      )}
+      {isModalOpen && (
+        <ModalContainer>
+         <ModalContent>
+           <HeaderModal>
+             <h2>Resultado</h2>
+              <CloseButton onClick={closeModal}>&times;</CloseButton>
+           </HeaderModal>
+            
+          </ModalContent>
+        </ModalContainer>
       )}
     </FormQuestion>
  );
