@@ -2,7 +2,12 @@ import styled from 'styled-components';
 import CardQuestion from '../components/CardQuestion';
 
 import ReactWallpaperCard from '../assets/cardthemes/react.png'
- import Typescript from '../assets/cardthemes/typescript.png'
+import Typescript from '../assets/cardthemes/typescript.png'
+import JavaScript from '../assets/cardthemes/js.jpg'
+import Tailwind from '../assets/cardthemes/tailwind.jpg'
+import Python from '../assets/cardthemes/python.png'
+import NodeJS from '../assets/cardthemes/node.jpg'
+import MySQL from '../assets/cardthemes/mysql.png'
 
 const MainContainer = styled.div`
     max-width: 1200px;
@@ -11,7 +16,6 @@ const MainContainer = styled.div`
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    padding: .5rem 1rem 13.8rem 1rem; 
     height: 100%;
     h1 {
         font-size: 1.3rem;
@@ -19,48 +23,52 @@ const MainContainer = styled.div`
         margin-bottom: .3rem;
     }
 `
-const ButtonsTheme = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 3rem;
-    button {
-        background-color: transparent;
-        color: #000;
-        font-weight: 600;
-        cursor: pointer;
-        font-size: .9rem;
-    }
-`
 const QuizzesWrap = styled.div`
     margin-top: 2rem;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 `
-
 
 const Main = () => {
     return (
         <MainContainer>
-            <ButtonsTheme>
-                <button>Front-end</button>
-                <button>Todos</button>
-                <button>Back-end</button>
-            </ButtonsTheme>
             <QuizzesWrap>
                 <CardQuestion
                     imgUrl={ReactWallpaperCard}
                     title='React Quiz'
-                    text='Esse é um questionário sobre o framework ReactJS. Teste seu conhecimento jogando clicando no botão abaixo:'
                     linkTo='/reactquiz'
                 />
                  <CardQuestion
                     imgUrl={Typescript}
                     title='TypeScript Quiz'
-                    text='Esse é um questionário sobre TypeScript, o superset do JavaScript. Teste seu conhecimento jogando clicando no botão abaixo:'
                     linkTo='/typescriptquiz'
+                />
+                <CardQuestion
+                    imgUrl={JavaScript}
+                    title='JavaScript Quiz'
+                    linkTo='/javascriptquiz'
+                />
+                 <CardQuestion
+                    imgUrl={Tailwind}
+                    title='Tailwind Quiz'
+                    linkTo='/tailwindquiz'
+                />
+                <CardQuestion
+                    imgUrl={Python}
+                    title='Python Quiz'
+                    linkTo='/pythonquiz'
+                />
+                 <CardQuestion
+                    imgUrl={NodeJS}
+                    title='NodeJS Quiz'
+                    linkTo='/nodequiz'
+                />
+                <CardQuestion
+                    imgUrl={MySQL}
+                    title='MySQL Quiz'
+                    linkTo='/mysqlquiz'
                 />
             </QuizzesWrap>
         </MainContainer>

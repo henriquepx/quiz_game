@@ -7,7 +7,7 @@ const QuestionCardContainer = styled.div`
     background-color: #f1f1f1;
     border-radius: 10px;
 
-    max-width: 400px;
+    width: 370px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,11 +16,6 @@ const QuestionCardContainer = styled.div`
 `
 const TitleCard = styled.h1`
     margin-top: .5rem;
-`
-const TextCard = styled.p`
-    margin: 2px 0;
-    font-weight: 300;
-    font-size: 1rem;
 `
 const ButtonToQuiz = styled(Link)`
     background-color: #00b7ff;
@@ -47,17 +42,15 @@ const BackgroundImageContainer = styled.div<{ imgUrl: string }>`
 interface CardQuestionProps {
     imgUrl: string;
     title: string;
-    text: string;
     linkTo: string;
   }
 
-  const CardQuestion = ({ imgUrl, title, text, linkTo }: CardQuestionProps) => {
+  const CardQuestion = ({ imgUrl, title, linkTo }: CardQuestionProps) => {
   return (
       <QuestionCardContainer>
           <BackgroundImageContainer imgUrl={imgUrl} />
           <div>
                 <TitleCard>{title}</TitleCard>
-                <TextCard>{text}</TextCard>
           </div>
           <ButtonToQuiz to={linkTo}>
                   Play

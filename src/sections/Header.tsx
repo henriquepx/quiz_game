@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
-import { MdMenu, MdPerson, MdSearch } from "react-icons/md";
+import { MdMenu, MdSearch } from "react-icons/md";
 
 const HeaderContainer = styled.header`
   padding: .5rem 1rem;
@@ -51,7 +51,6 @@ const Header = () => {
           </NavHeader>
         <TitleHeader>QuizGames</TitleHeader>
         <IconsHeader>
-          <MdPerson size={20}/>
           <MdSearch  size={20}/>
           <HamburgerMenu><MdMenu size={26} /></HamburgerMenu>
         </IconsHeader>
