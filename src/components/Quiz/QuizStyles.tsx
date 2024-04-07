@@ -9,7 +9,6 @@ const fadeIn = keyframes`
     opacity: 1;
   }
 `;
-
 export const FormQuestion = styled.form`
   display: flex;
   flex-direction: column;
@@ -19,7 +18,6 @@ export const FormQuestion = styled.form`
   padding-bottom: 7rem;
   animation: ${fadeIn} 1.4s forwards;
 `;
-
 export const Button = styled.button`
   padding: .5rem 1rem;
   background-color: #0098df;
@@ -34,30 +32,25 @@ export const Button = styled.button`
     margin-top: 1rem;
   }
 `;
-
 export const QuestionCounter = styled.p`
   font-size: .8rem;
 `;
-
 export const DivHeaderContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem;
 `;
-
 export const HeaderAnswerContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   gap: 15px;
 `;
-
 interface HeaderAnswerBlockProps {
   active: boolean;
   answered: boolean;
 }
-
 export const HeaderAnswerBlock = styled.span<HeaderAnswerBlockProps>`
   display: block;
   width: 100%;
@@ -65,7 +58,6 @@ export const HeaderAnswerBlock = styled.span<HeaderAnswerBlockProps>`
   height: 10px;
   border-radius: 10px;
 `;
-
 export const DivHeaderQuiz = styled.div`
   width: 100%;
   display: flex;
@@ -82,7 +74,6 @@ export const DivHeaderQuiz = styled.div`
     font-size: 1.4rem;
   }
 `;
-
 export const ReturnToHome = styled(Link)`
   display: flex;
   align-items: center;
@@ -90,7 +81,6 @@ export const ReturnToHome = styled(Link)`
   color: #000;
   font-weight: 700;
 `;
-
 export const ModalContainer = styled.div`
   position: fixed;
   top: 0;
@@ -102,20 +92,20 @@ export const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
 export const HeaderModal = styled.header`
   background-color: #fefefe;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 20px;
   padding: 1rem;
   h2 {
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0098df;
   }
 `;
-
-
 export const ModalContent = styled.div`
   background-color: #fefefe;
   border-radius: 10px;
@@ -123,14 +113,41 @@ export const ModalContent = styled.div`
   display: flex;
   align-items: center;
 `;
+export const ModalIconInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`
+export const ModalIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`
 
-export const CloseButton = styled.span`
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  &:hover {
-    color: black;
+export const MidiasModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    font-weight: 700;
+    color: #0098df;
   }
-`;
+`
+
+export const BackHomeModall = styled(Link)`
+  padding: .5rem 1rem;
+  background-color: #0098df;
+  color: #efefef;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 500px) {
+    margin-top: 1rem;
+  }
+`
