@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { MdMenu, MdSearch } from "react-icons/md";
 
 const HeaderContainer = styled.header`
@@ -38,6 +38,8 @@ const IconsHeader = styled.div`
 `
 const HamburgerMenu = styled.div`
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `
 
 const Header = () => {
@@ -45,9 +47,8 @@ const Header = () => {
     <HeaderContainer>
       <HeaderSize>
           <NavHeader>
-            <a href="#" target='_blank' rel='noreferrer'><FaLinkedinIn size={22} /></a>
-            <a href="#" target='_blank' rel='noreferrer'><FaGithub  size={22}  /></a>
-            <a href="#" target='_blank' rel='noreferrer'><FaInstagram size={22} /></a>
+            <a href="https://www.linkedin.com/in/henriquepinheiroxavier/" target='_blank' rel='noreferrer'><FaLinkedinIn size={22} /></a>
+            <a href="https://github.com/henriquepx" target='_blank' rel='noreferrer'><FaGithub  size={22}  /></a>
           </NavHeader>
         <TitleHeader>QuizGames</TitleHeader>
         <IconsHeader>

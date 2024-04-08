@@ -8,6 +8,9 @@ const QuestionCardContainer = styled.div`
     border-radius: 10px;
 
     width: 370px;
+    @media (max-width: 770px) {
+        width: 340px;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;

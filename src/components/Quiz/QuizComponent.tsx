@@ -12,15 +12,20 @@ import {
   HeaderAnswerContainer,
   HeaderAnswerBlock,
   ReturnToHome,
-  ModalIcons,
-  ModalIconInfo,
   BackHomeModall,
-  MidiasModalContainer
+  MidiasModalContainer,
+  Medal,
+  AcertosQuiz,
+  DescriptionQuizFeedback,
+  TextQuizAcerto,
+  ContainerMidiasFlex
 } from './QuizStyles';
 import Radio from '../Radio';
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import { FaCheck, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import { GiSandsOfTime } from "react-icons/gi";
+import { FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import GoldMedal from '../../assets/gold.png';
+import SilverMedal from '../../assets/silver.png';
+import BronzeMedal from '../../assets/bronze.png';
 
 interface Pergunta {
   pergunta: string;
@@ -89,6 +94,30 @@ const QuizComponent: React.FC<QuizProps> = ({ perguntas }) => {
     return correctCount;
   };
 
+  const calculatePercentage = () => {
+    const correctCount = countCorrectAnswers();
+    return (correctCount / perguntas.length) * 100;
+  };
+
+  const determineMedalAndFeedback = () => {
+    const percentage = calculatePercentage();
+    let medal;
+    let feedback;
+    
+    if (percentage >= 80) {
+      medal = <Medal src={GoldMedal} alt="Medalha de ouro" />;
+      feedback = "Parabéns!";
+    } else if (percentage >= 50) {
+      medal = <Medal src={SilverMedal} alt="Medalha de prata" />;
+      feedback = "Muito bem!";
+    } else {
+      medal = <Medal src={BronzeMedal} alt="Medalha de bronze" />;
+      feedback = "Tente novamente!";
+    }
+    
+    return { medal, feedback };
+  };
+
   const generateShareText = () => {
     const correctCount = countCorrectAnswers();
     return `Acabei de fazer um quiz e acertei ${correctCount}/${perguntas.length} perguntas! #QuizGames`;
@@ -143,28 +172,25 @@ const QuizComponent: React.FC<QuizProps> = ({ perguntas }) => {
       )}
       {isModalOpen && (
         <ModalContainer onClick={handleModalClick} ref={modalRef}>
-          <ModalContent>
-            <HeaderModal>
-              <h2>Resultado</h2>
-              <ModalIconInfo>
-                <ModalIcons>
-                  <GiSandsOfTime size={40} />
-                  <span>Tempo decorrido: <br />{startTime && endTime ? ((endTime - startTime) / 1000).toFixed(2) + ' segundos' : 'N/A'}</span>
-                </ModalIcons>
-                <ModalIcons>
-                  <FaCheck size={40} />
-                  <p>Respostas corretas: <br />{countCorrectAnswers()}/{perguntas.length}</p>
-                </ModalIcons>
-              </ModalIconInfo>
-              <MidiasModalContainer>
-                <a href={`https://www.linkedin.com/shareArticle?url=${window.location.href}&title=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaLinkedin size={22} style={{ color: '#0098df' }}/>LinkedIn</a>
-                <a href={`https://api.whatsapp.com/send?text=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaWhatsapp size={22} style={{ color: '#0098df'}}/>WhatsApp</a>
-                <a href={`https://twitter.com/intent/tweet?text=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaTwitter  size={22} style={{ color: '#0098df' }}/>Twitter</a>
-              </MidiasModalContainer>
-              <BackHomeModall to="/"><FaArrowLeftLong /> Voltar ao início</BackHomeModall>
-            </HeaderModal>
-          </ModalContent>
-        </ModalContainer>
+        <ModalContent>
+          <HeaderModal>
+            {determineMedalAndFeedback().medal}
+            <DescriptionQuizFeedback>{determineMedalAndFeedback().feedback}</DescriptionQuizFeedback>
+            <AcertosQuiz><br />{countCorrectAnswers()}/{perguntas.length} acertos</AcertosQuiz>
+            <TextQuizAcerto>Você recebeu uma medalha por ter acertado <span>{calculatePercentage().toFixed(0)}%</span> do quiz em um tempo de <span>{startTime && endTime ? ((endTime - startTime) / 1000).toFixed(0) + ' segundos' : 'N/A'}</span></TextQuizAcerto>
+            <MidiasModalContainer>
+              <h2>Compartilhe seu resultado:</h2>
+              <ContainerMidiasFlex>
+                <a href={`https://www.linkedin.com/shareArticle?url=${window.location.href}&title=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaLinkedin size={18} style={{ color: '#ffffff' }}/></a>
+                <a href={`https://api.whatsapp.com/send?text=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaWhatsapp size={18} style={{ color: '#ffffff'}}/></a>
+                <a href={`https://twitter.com/intent/tweet?text=${generateShareText()}`} target="_blank" rel="noopener noreferrer"><FaTwitter  size={18} style={{ color: '#ffffff' }}/></a>
+              </ContainerMidiasFlex>
+            </MidiasModalContainer>
+            <BackHomeModall to="/"><FaArrowLeftLong /> Voltar ao início</BackHomeModall>
+          </HeaderModal>
+        </ModalContent>
+      </ModalContainer>
+      
       )}
     </FormQuestion>
   );

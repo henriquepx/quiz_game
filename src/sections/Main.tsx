@@ -26,9 +26,12 @@ const MainContainer = styled.div`
 const QuizzesWrap = styled.div`
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    @media (max-width: 770px) {
+        justify-content: center;
+    }
 `
 
 const Main = () => {

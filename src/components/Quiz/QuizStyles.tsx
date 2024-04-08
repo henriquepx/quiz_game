@@ -87,24 +87,23 @@ export const ModalContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+export const Medal = styled.img`
+  width: 100px;
+`
 export const HeaderModal = styled.header`
   background-color: #fefefe;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 20px;
   padding: 1rem;
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #0098df;
-  }
 `;
 export const ModalContent = styled.div`
   background-color: #fefefe;
@@ -113,18 +112,35 @@ export const ModalContent = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ModalIconInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
+export const DescriptionQuizFeedback = styled.p`
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
 `
-export const ModalIcons = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const TextQuizAcerto = styled.p`
   text-align: center;
+  max-width: 30ch;
+  span {
+    font-weight: 700;
+  }
 `
-
+export const AcertosQuiz = styled.p`
+  font-size: 3rem;
+  color: #0098df;
+  margin-top: -6rem;
+  font-family: "Bangers", system-ui;
+`
+export const ContainerMidiasFlex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  a {
+   padding: .5rem;
+   background-color: #000000;
+   border-radius: 50px;
+  }
+`
 export const MidiasModalContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -137,7 +153,6 @@ export const MidiasModalContainer = styled.div`
     color: #0098df;
   }
 `
-
 export const BackHomeModall = styled(Link)`
   padding: .5rem 1rem;
   background-color: #0098df;
@@ -147,7 +162,5 @@ export const BackHomeModall = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
-  @media (max-width: 500px) {
-    margin-top: 1rem;
-  }
+  margin-top: 1rem;
 `
