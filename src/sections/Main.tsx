@@ -101,11 +101,7 @@ const Main = () => {
                     title='JavaScript Quiz'
                     linkTo='/javascriptquiz'
                 />
-                 <CardQuestion
-                    imgUrl={Tailwind}
-                    title='Tailwind Quiz'
-                    linkTo='/tailwindquiz'
-                />
+                
                 <CardQuestion
                     imgUrl={Python}
                     title='Python Quiz'
@@ -116,18 +112,33 @@ const Main = () => {
                     title='NodeJS Quiz'
                     linkTo='/nodequiz'
                 />
+                <CardQuestion
+                    imgUrl={MySQL}
+                    title='MySQL Quiz'
+                    linkTo='/mysqlquiz'
+                />
+                <CardQuestion
+                    imgUrl={Csharp}
+                    title='C# Quiz'
+                    linkTo='/csharpquiz'
+                />
+                <CardQuestion
+                    imgUrl={Java}
+                    title='Java Quiz'
+                    linkTo='/javaquiz'
+                />
+                <CardQuestion
+                    imgUrl={Next}
+                    title='NextJS Quiz'
+                    linkTo='/nextjsquiz'
+                />
 
                 {showMoreQuizzes && (
                     <>
                         <CardQuestion
-                            imgUrl={MySQL}
-                            title='MySQL Quiz'
-                            linkTo='/mysqlquiz'
-                        />
-                        <CardQuestion
-                            imgUrl={Csharp}
-                            title='C# Quiz'
-                            linkTo='/csharpquiz'
+                            imgUrl={Tailwind}
+                            title='Tailwind Quiz'
+                            linkTo='/tailwindquiz'
                         />
                         <CardQuestion
                             imgUrl={Git}
@@ -138,16 +149,6 @@ const Main = () => {
                             imgUrl={HTMLCSS}
                             title='HTML & CSS Quiz'
                             linkTo='/htmlcssquiz'
-                        />
-                        <CardQuestion
-                            imgUrl={Java}
-                            title='Java Quiz'
-                            linkTo='/javaquiz'
-                        />
-                        <CardQuestion
-                            imgUrl={Next}
-                            title='NextJS Quiz'
-                            linkTo='/nextjsquiz'
                         />
                     </>
                 )}
