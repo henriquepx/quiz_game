@@ -16,9 +16,6 @@ const HeaderSize = styled.header`
 const NavHeader = styled.nav`
   display: flex;
   gap: 10px;
-  @media (max-width: 530px) {
-    display: none;
-  }
   a {
     color: #000;
   }

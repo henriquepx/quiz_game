@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import CardQuestion from '../components/CardQuestion';
 import { useState } from 'react';
+import { FaArrowDownLong } from "react-icons/fa6";
 
 import ReactWallpaperCard from '../assets/cardthemes/react.png'
 import Typescript from '../assets/cardthemes/typescript.png'
@@ -9,6 +10,31 @@ import Tailwind from '../assets/cardthemes/tailwind.jpg'
 import Python from '../assets/cardthemes/python.png'
 import NodeJS from '../assets/cardthemes/node.jpg'
 import MySQL from '../assets/cardthemes/mysql.png'
+import Csharp from '../assets/cardthemes/csharp.png'
+import Git from '../assets/cardthemes/git.png'
+import Java from '../assets/cardthemes/java.jpg'
+import Next from '../assets/cardthemes/next.png'
+import HTMLCSS from '../assets/cardthemes/htmlcss.png'
+
+const OpenMoreQuizzes = keyframes`
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+`;
+const slideInFromBottom = keyframes`
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+`;
+
 
 const MainContainer = styled.div`
     max-width: 1200px;
@@ -25,17 +51,6 @@ const MainContainer = styled.div`
         margin-bottom: .3rem;
     }
 `
-const slideInFromBottom = keyframes`
-    from {
-        transform: translateY(15px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-`;
-
 const QuizzesWrap = styled.div`
     margin-top: 2rem;
     display: flex;
@@ -48,11 +63,17 @@ const QuizzesWrap = styled.div`
     }
 `
 const MoreQuizzesLink = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    color: #000000;
     width: 100%;
+    color: #000000;
     cursor: pointer;
     text-align: center;
+    margin-top: 2rem;
+    animation: ${OpenMoreQuizzes} 1.2s infinite;
 `;
 
 const Main = () => {
@@ -103,12 +124,36 @@ const Main = () => {
                             title='MySQL Quiz'
                             linkTo='/mysqlquiz'
                         />
-
+                        <CardQuestion
+                            imgUrl={Csharp}
+                            title='C# Quiz'
+                            linkTo='/csharpquiz'
+                        />
+                        <CardQuestion
+                            imgUrl={Git}
+                            title='Git Quiz'
+                            linkTo='/gitquiz'
+                        />
+                        <CardQuestion
+                            imgUrl={HTMLCSS}
+                            title='HTML & CSS Quiz'
+                            linkTo='/htmlcssquiz'
+                        />
+                        <CardQuestion
+                            imgUrl={Java}
+                            title='Java Quiz'
+                            linkTo='/javaquiz'
+                        />
+                        <CardQuestion
+                            imgUrl={Next}
+                            title='NextJS Quiz'
+                            linkTo='/nextjsquiz'
+                        />
                     </>
                 )}
 
                 {!showMoreQuizzes && (
-                    <MoreQuizzesLink onClick={handleShowMoreQuizzes}>Ver mais Quizzes</MoreQuizzesLink>
+                    <MoreQuizzesLink onClick={handleShowMoreQuizzes}>Ver mais Quizzes <FaArrowDownLong /></MoreQuizzesLink>
                 )}
                 
             </QuizzesWrap>

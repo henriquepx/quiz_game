@@ -8,6 +8,11 @@ import QuizNodeJS from './pages/Quizzes/QuizNodeJS';
 import QuizTypescript from './pages/Quizzes/QuizTypescript';
 import QuizJavaScript from './pages/Quizzes/QuizJavaScript';
 import QuizMySQL from './pages/Quizzes/QuizMySQL';
+import QuizCsharp from './pages/Quizzes/QuizCsharp';
+import QuizGit from './pages/Quizzes/QuizGit';
+import QuizHTMLCSS from './pages/Quizzes/QuizHTMLCSS';
+import QuizJava from './pages/Quizzes/QuizJava';
+import QuizNextJS from './pages/Quizzes/QuizNextJS';
 
 function App() {
   return (
@@ -21,7 +26,13 @@ function App() {
         <Route path='/pythonquiz' element={<QuizPython />}/>
         <Route path='/nodequiz' element={<QuizNodeJS />} />
         <Route path='/javascriptquiz' element={<QuizJavaScript />} />
-        <Route path='/mysqlquiz' element={<QuizMySQL />}/>
+        <Route path='/mysqlquiz' element={<QuizMySQL />} />
+        
+        <Route path='/csharpquiz' element={<QuizCsharp />} />
+        <Route path='/gitquiz' element={<QuizGit />}/>
+        <Route path='/htmlcssquiz' element={<QuizHTMLCSS />} />
+        <Route path='/javaquiz' element={<QuizJava />} />
+        <Route path='/nextjsquiz' element={<QuizNextJS />}/>
       </Routes>
     </BrowserRouter>
   );
